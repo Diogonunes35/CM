@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blade Runner Parallax</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+  <section class="intro">
+
+  </section>
+
+  <!-- TRANSITION -->
+  <div class="transition overlay1"></div> <!-- right to left -->
+
+  <!-- FARM -->
+  <section class="scene scene-farm">
+
+    <!-- static elements -->
+    <div class="layer">
+    </div>
+    <div class="layer">
+    </div>
+
+    <!-- moving elements -->
+    <div class="scroll-track horizontal track-farm"> <!-- right to left -->
+      <!-- Screen 1 -->
+      <div class="panel">
+        <div class="layer layer--farm-screen1">
+          <img src="assets/farm1.jpg" alt="Farm1">
+        </div>
+      </div>
+
+      <!-- Screen 2 -->
+      <div class="panel">
+        <div class="layer layer--farm-screen2">
+          <img src="assets/farm2.jpg" alt="Farm2">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FARMHOUSE -->
+  <section class="scene scene-farmhouse">
+    <!-- Screen 1 -->
+    <div class="panel">
+      <div class="layer layer--farmhouse">
+        <img src="assets/farmhouse.jpg" alt="Farmhouse">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TRANSITION -->
+  <div class="transition overlay2"></div> <!-- right to left -->
+
+
+  <!-- CITY -->
+
+  <!-- static elements -->
+  <div class="layer">
+  </div>
+  <div class="layer">
+  </div>
+
+  <!-- moving elements -->
+  <section class="scene-city1">
+    <div class="scroll-track vertical track-city1"> <!-- top to bottom -->
+      <!-- Screen 1 -->
+      <div class="panel">
+        <div class="layer layer--city11">
+          <img src="assets/city11.jpg" alt="City11">
+        </div>
+      </div>
+      <!-- Screen 2 -->
+      <div class="panel">
+        <div class="layer layer--city12">
+          <img src="assets/city12.jpg" alt="City12">
+        </div>
+      </div>
+      <!-- Screen 3 -->
+      <div class="panel">
+        <div class="layer layer--city13">
+          <img src="assets/city13.jpg" alt="City13">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene-city2">
+    <div class="scroll-track horizontal track-city2"> <!-- left to right -->
+      <!-- Screen 1 -->
+      <div class="panel">
+        <div class="layer layer--city21">
+          <img src="assets/city21.jpg" alt="City21">
+        </div>
+      </div>
+      <!-- Screen 2 -->
+      <div class="panel">
+        <div class="layer layer--city22">
+          <img src="assets/city22.jpg" alt="City22">
+        </div>
+      </div>
+      <!-- Screen 3 -->
+      <div class="panel">
+        <div class="layer layer--city23">
+          <img src="assets/city23.jpg" alt="City23">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scene-city3">
+    <div class="scroll-track vertical track-city3"> <!-- bottom to top -->
+      <!-- Screen 1 -->
+      <div class="panel">
+        <div class="layer layer--city31">
+          <img src="assets/city31.jpg" alt="City31">
+        </div>
+      </div>
+      <!-- Screen 2 -->
+      <div class="panel">
+        <div class="layer layer--city32">
+          <img src="assets/city32.jpg" alt="City32">
+        </div>
+      </div>
+      <!-- Screen 3 -->
+      <div class="panel">
+        <div class="layer layer--city33">
+          <img src="assets/city33.jpg" alt="City33">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- REST OF THE SCENES HERE NOT GONNA PUT THEM HERE RIGHT NOW -->
+
+  <!-- WALLACE CORPORATION -->
+
+  <!-- ORPHANAGE -->
+
+
+  <!-- TRANSITION -->
+  <div class="transition overlay3"></div> <!-- left to right -->
+
+  <!-- TRANSITION -->
+  <div class="transition overlay4"></div> <!-- top to bottom -->
+
+
+  <section class="scene scene-desert">
+
+    <!-- static elements -->
+    <div class="layer layer--background">
+      <img src="assets/background.png" alt="Background">
+    </div>
+    <div class="layer layer--ground">
+      <img src="assets/ground.png" alt="Ground">
+    </div>
+
+    <!-- moving elements -->
+    <div class="scroll-track horizontal track-desert"> <!-- left to right -->
+      <!-- Screen 1 -->
+      <div class="panel">
+        <div class="layer">
+          <!-- empty on the first screen (FOR NOW) -->
+        </div>
+      </div>
+      <!-- Screen 2 -->
+      <div class="panel">
+        <div class="layer layer--statue1">
+          <img src="assets/statue1.png" alt="Statue 1">
+        </div>
+
+      </div>
+      <div class="panel">
+        <div class="layer layer--statue2">
+          <img src="assets/statue2-cut.png" alt="Statue 2">
+        </div>
+      </div>
+      <!-- Screen 3 -->
+      <div class="panel">
+        <div class="layer layer--bees"></div>
+        <img src="assets/bees.png" alt="Bees">
+      </div>
+      <!-- Screen 4 -->
+      <div class="panel">
+        <div class="layer layer--house"></div>
+        <img src="assets/house.png" alt="House">
+      </div>
+
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
