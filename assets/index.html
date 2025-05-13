@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
   <title>Blade Runner Parallax</title>
   <link rel="stylesheet" href="style.css">
@@ -11,14 +10,13 @@
 </head>
 
 <body>
-  <!--
+
   <section class="intro">
 
   </section>
--->
+
   <!-- TRANSITION -->
-  <!--
-  <div class="transition overlay1"></div> --><!-- right to left -->
+  <div class="transition overlay1"></div> <!-- right to left -->
 
   <!-- FARM -->
   <section class="scene scene-farm">
@@ -58,18 +56,21 @@
     </div>
   </section>
 
+
   <!-- TRANSITION -->
-  <div class="transition overlay2">
-    <div class="panel">
-      <div class="transition-text">Transitioning...</div>
-    </div>
-  </div> <!-- right to left -->
+  <div class="transition overlay2"></div> <!-- right to left -->
 
 
   <!-- CITY -->
 
+  <!-- static elements -->
+  <div class="layer">
+  </div>
+  <div class="layer">
+  </div>
+
   <!-- moving elements -->
-  <section class="scene scene-city1">
+  <section class="scene-city1">
     <div class="scroll-track vertical track-city1"> <!-- top to bottom -->
       <!-- Screen 1 -->
       <div class="panel">
@@ -92,7 +93,7 @@
     </div>
   </section>
 
-  <section class="scene scene-city2">
+  <section class="scene-city2">
     <div class="scroll-track horizontal track-city2"> <!-- left to right -->
       <!-- Screen 1 -->
       <div class="panel">
@@ -115,7 +116,7 @@
     </div>
   </section>
 
-  <section class="scene scene-city3">
+  <section class="scene-city3">
     <div class="scroll-track vertical track-city3"> <!-- bottom to top -->
       <!-- Screen 1 -->
       <div class="panel">
@@ -138,9 +139,6 @@
 
     </div>
   </section>
-
-  </section>
-
 
 
   <!-- REST OF THE SCENES HERE NOT GONNA PUT THEM HERE RIGHT NOW -->
@@ -189,15 +187,13 @@
       </div>
       <!-- Screen 3 -->
       <div class="panel">
-        <div class="layer layer--bees">
-          <img src="assets/bees.png" alt="Bees">
-        </div>
+        <div class="layer layer--bees"></div>
+        <img src="assets/bees.png" alt="Bees">
       </div>
       <!-- Screen 4 -->
       <div class="panel">
-        <div class="layer layer--house">
-          <img src="assets/house.png" alt="House">
-        </div>
+        <div class="layer layer--house"></div>
+        <img src="assets/house.png" alt="House">
       </div>
 
     </div>
