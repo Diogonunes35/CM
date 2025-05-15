@@ -5,7 +5,9 @@ body {
   padding: 0;
   height: 100%;
   scroll-behavior: smooth;
-  background-color: black; /* changed from yellow for production */
+  background-color: rgb(255, 0, 144);
+  /* changed from yellow for production */
+  z-index: -1;
 }
 
 /* SCENE CONTAINER */
@@ -15,6 +17,18 @@ body {
   height: 100vh;
   overflow: hidden;
   outline: 2px dashed limegreen;
+}
+
+/* PANELS */
+.panel {
+  flex: 0 0 100vw;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: transparent;
+  /* changed from blueviolet */
+  border: red 2px solid;
+  /* removed red border */
 }
 
 /* LAYERS */
@@ -31,25 +45,50 @@ body {
   display: block;
   width: 100vw;
   height: 100vh;
-  object-fit: cover; /* CAUSA IMAGENS NO DESERTO DAREM STRETCH */
+  object-fit: cover;
+  /* CAUSA IMAGENS NO DESERTO DAREM STRETCH */
 }
 
 /* CUSTOM LAYER STACKING */
-.layer--background {
+
+.layer--ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.layer--ground img {
+  width: 100vw;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+.layer--ground img {
+  position: absolute;
+  bottom: 0;
+  top: auto;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  z-index: 1;
+  /* removed duplicate */
+}
+
+.layer--background img {
   z-index: 0;
 }
 
-.layer--ground {
-  bottom: 0;
-  top: auto;
-  z-index: 0; /* removed duplicate */
-}
-
-.layer--statue1,
-.layer--statue2,
-.layer--bees,
-.layer--house {
-  z-index: 1;
+.layer--statue1 img,
+.layer--statue2 img,
+.layer--bees img,
+.layer--house img {
+  object-fit: contain;
+  z-index: 2;
 }
 
 /* SCROLL TRACK STYLES */
@@ -76,61 +115,47 @@ body {
 
 /* DIRECTIONAL TRACK SIZES */
 .scroll-track.track-farm {
-  width: 200vw; /* 2 panels */
+  width: 200vw;
+  /* 2 panels */
   display: flex;
   height: 100vh;
+  flex-direction: row-reverse;
 }
 
 .scene-farm .scroll-track.track-farm .panel {
-  flex: 0 0 100vw; /* Each panel takes up 100vw */
+  flex: 0 0 100vw;
+  /* Each panel takes up 100vw */
   height: 100vh;
 }
+
 /* Target only the panels in the City 1 scene */
 .scene-city1 .scroll-track.track-city1 {
-  height: 100vh; /* 3 panels */
+  height: 100vh;
+  /* 3 panels */
 }
 
 .scene-city1 .scroll-track.track-city1 .panel {
-  height: 100vh; /* Each panel takes up 100vh */
+  height: 100vh;
+  /* Each panel takes up 100vh */
 }
 
 .scroll-track.track-city1 {
-  height: 100vh; /* 3 vertical panels */
+  height: 100vh;
+  /* 3 vertical panels */
 }
 
-.scroll-track.track-city2 {
-  width: 100vw; /* 3 horizontal panels */
+.scroll-track.track-city2-desert-casino {
+  width: 100vw;
+  /* 3 horizontal panels */
 }
 
 .scroll-track.track-city3 {
-  height: 100vh; /* 3 vertical panels */
+  height: 100vh;
+  /* 3 vertical panels */
 }
 
 .scroll-track.track-desert {
-  width: 400vw; /* 4 panels */
+  width: 400vw;
+  /* 4 panels */
   display: flex;
-}
-
-/* PANELS */
-.panel {
-  flex: 0 0 100vw;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  background-color: transparent; /* changed from blueviolet */
-  border: red 2px solid; /* removed red border */
-}
-
-/* TRANSITION EFFECT */
-.transition {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  transform: translateX(-100%); /* Initially hidden off-screen */
-  transition: transform 1s ease-in-out; /* Smooth transition */
-  z-index: 999;
-  pointer-events: none; /* So it's not interactive */
 }

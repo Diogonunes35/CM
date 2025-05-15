@@ -11,24 +11,19 @@
 </head>
 
 <body>
-  <!--
-  <section class="intro">
 
+  <section class="intro">
+    <div class="panel">
+      <h1>"INTRO"</h1>
+    </div>
   </section>
--->
+
   <!-- TRANSITION -->
-  <!--
-  <div class="transition overlay1"></div> --><!-- right to left -->
+
+  <div class="transition overlay1"></div> <!-- right to left -->
 
   <!-- FARM -->
   <section class="scene scene-farm">
-
-    <!-- static elements -->
-    <div class="layer">
-    </div>
-    <div class="layer">
-    </div>
-
     <!-- moving elements -->
     <div class="scroll-track horizontal track-farm"> <!-- right to left -->
       <!-- Screen 1 -->
@@ -44,31 +39,27 @@
           <img src="assets/farm2.jpg" alt="Farm2">
         </div>
       </div>
-    </div>
 
-  </section>
+      <!-- TRANSITION -->
+      <div class="panel transition overlay2">
+        <h1>"TRANSITION"</h1>
+      </div> <!-- right to left -->
 
-  <!-- FARMHOUSE -->
-  <section class="scene scene-farmhouse">
-    <!-- Screen 1 -->
-    <div class="panel">
-      <div class="layer layer--farmhouse">
-        <img src="assets/farmhouse.jpg" alt="Farmhouse">
+      <!-- FARMHOUSE -->
+      <div class="panel">
+        <div class="layer layer--farmhouse">
+          <img src="assets/farmhouse.jpg" alt="Farmhouse">
+        </div>
       </div>
-    </div>
+
   </section>
 
   <!-- TRANSITION -->
-  <div class="transition overlay2">
-    <div class="panel">
-      <div class="transition-text">Transitioning...</div>
-    </div>
+  <div class="panel transition overlay3">
+    <h1>"TRANSITION"</h1>
   </div> <!-- right to left -->
 
-
   <!-- CITY -->
-
-  <!-- moving elements -->
   <section class="scene scene-city1">
     <div class="scroll-track vertical track-city1"> <!-- top to bottom -->
       <!-- Screen 1 -->
@@ -92,44 +83,146 @@
     </div>
   </section>
 
-  <section class="scene scene-city2">
-    <div class="scroll-track horizontal track-city2"> <!-- left to right -->
-      <!-- Screen 1 -->
-      <div class="panel">
-        <div class="layer layer--city21">
-          <img src="assets/city21.jpg" alt="City21">
+  <!-- SCENE CITY2 + DESERT + CASINO -->
+  <section class="scene scene-city2-desert-casino">
+    <div class="scroll-track horizontal track-city2-desert-casino"> <!-- left to right -->
+
+      <div class="scene-city2" style="display: contents;">
+        <!-- Screen 1 -->
+        <div class="panel">
+          <div class="layer layer--city21">
+            <img src="assets/city21.jpg" alt="City21">
+          </div>
+        </div>
+        <!-- Screen 2 -->
+        <div class="panel">
+          <div class="layer layer--city22">
+            <img src="assets/city22.jpg" alt="City22">
+          </div>
+        </div>
+        <!-- Screen 3 -->
+        <div class="panel">
+          <div class="layer layer--city23">
+            <img src="assets/city23.jpg" alt="City23">
+          </div>
         </div>
       </div>
-      <!-- Screen 2 -->
-      <div class="panel">
-        <div class="layer layer--city22">
-          <img src="assets/city22.jpg" alt="City22">
+      <!-- TRANSITION -->
+      <div class="panel transition overlay4">
+        <h1>"TRANSITION"</h1>
+        <div class="layer layer--transition">
+          <img src="assets/transition.png" alt="Transition">
+        </div>
+      </div> <!-- left to right -->
+
+      <!-- DESERT -->
+
+      <div class="scene-desert" style="display: contents;">
+        <!-- Screen 1 -->
+        <div class="panel">
+          <div class="layer layer-background">
+            <!-- static elements --> <!-- previously at the top of the page -->
+            <img src="assets/background.png" alt="Background">
+            <!-- empty on the first screen (FOR NOW) -->
+          </div>
+          <div class="layer layer--ground">
+            <img src="assets/ground.png" alt="Ground">
+          </div>
+        </div>
+
+        <!-- Screen 2 -->
+        <div class="panel">
+          <!-- static elements --> <!-- previously at the top of the page -->
+          <div class="layer layer--background">
+            <img src="assets/background.png" alt="Background">
+          </div>
+          <div class="layer layer--ground">
+            <img src="assets/ground.png" alt="Ground">
+          </div>
+          <!-- moving elements -->
+          <div class="layer layer--statue1">
+            <img src="assets/statue1.png" alt="Statue 1">
+          </div>
+        </div>
+
+        <!-- Screen 3 -->
+        <div class="panel">
+          <!-- static elements --> <!-- previously at the top of the page -->
+          <div class="layer layer--background">
+            <img src="assets/background.png" alt="Background">
+          </div>
+          <div class="layer layer--ground">
+            <img src="assets/ground.png" alt="Ground">
+          </div>
+          <!-- moving elements -->
+          <div class="layer layer--statue2">
+            <img src="assets/statue2-cut.png" alt="Statue 2">
+          </div>
+        </div>
+
+        <!-- Screen 4 -->
+        <div class="panel">
+          <!-- static elements --> <!-- previously at the top of the page -->
+          <div class="layer layer--background">
+            <img src="assets/background.png" alt="Background">
+          </div>
+          <div class="layer layer--ground">
+            <img src="assets/ground.png" alt="Ground">
+          </div>
+          <!-- moving elements -->
+          <div class="layer layer--bees">
+          </div>
+        </div>
+
+        <!-- Screen 5 -->
+        <div class="panel">
+          <!-- static elements --> <!-- previously at the top of the page -->
+          <div class="layer layer--background">
+            <img src="assets/background.png" alt="Background">
+          </div>
+          <div class="layer layer--ground">
+            <img src="assets/ground.png" alt="Ground">
+          </div>
+          <!-- moving elements -->
+          <div class="layer layer--bees">
+            <img src="assets/house.png" alt="House">
+          </div>
+        </div>
+
+        <!-- Screen 6 -->
+        <div class="panel">
+          <!-- static elements --> <!-- previously at the top of the page -->
+          <div class="layer layer--background">
+            <img src="assets/background.png" alt="Background">
+          </div>
+          <div class="layer layer--ground">
+            <img src="assets/ground.png" alt="Ground">
+          </div>
+          <!-- moving elements -->
+          <div class="layer layer--house">
+            <img src="assets/house.png" alt="House">
+          </div>
         </div>
       </div>
-      <!-- Screen 3 -->
-      <div class="panel">
-        <div class="layer layer--city23">
-          <img src="assets/city23.jpg" alt="City23">
-        </div>
-      </div>
-    </div>
+
   </section>
 
+  <!--
   <section class="scene scene-city3">
     <div class="scroll-track vertical track-city3"> <!-- bottom to top -->
-      <!-- Screen 1 -->
+  <!-- Screen 1 
       <div class="panel">
         <div class="layer layer--city31">
           <img src="assets/city31.jpg" alt="City31">
         </div>
       </div>
-      <!-- Screen 2 -->
+      <!-- Screen 2 
       <div class="panel">
         <div class="layer layer--city32">
           <img src="assets/city32.jpg" alt="City32">
         </div>
-      </div>
-      <!-- Screen 3 -->
+      </div> 
+      <!-- Screen 3 
       <div class="panel">
         <div class="layer layer--city33">
           <img src="assets/city33.jpg" alt="City33">
@@ -138,9 +231,7 @@
 
     </div>
   </section>
-
-  </section>
-
+-->
 
 
   <!-- REST OF THE SCENES HERE NOT GONNA PUT THEM HERE RIGHT NOW -->
@@ -148,60 +239,6 @@
   <!-- WALLACE CORPORATION -->
 
   <!-- ORPHANAGE -->
-
-
-  <!-- TRANSITION -->
-  <div class="transition overlay3"></div> <!-- left to right -->
-
-  <!-- TRANSITION -->
-  <div class="transition overlay4"></div> <!-- top to bottom -->
-
-
-  <section class="scene scene-desert">
-
-    <!-- static elements -->
-    <div class="layer layer--background">
-      <img src="assets/background.png" alt="Background">
-    </div>
-    <div class="layer layer--ground">
-      <img src="assets/ground.png" alt="Ground">
-    </div>
-
-    <!-- moving elements -->
-    <div class="scroll-track horizontal track-desert"> <!-- left to right -->
-      <!-- Screen 1 -->
-      <div class="panel">
-        <div class="layer">
-          <!-- empty on the first screen (FOR NOW) -->
-        </div>
-      </div>
-      <!-- Screen 2 -->
-      <div class="panel">
-        <div class="layer layer--statue1">
-          <img src="assets/statue1.png" alt="Statue 1">
-        </div>
-
-      </div>
-      <div class="panel">
-        <div class="layer layer--statue2">
-          <img src="assets/statue2-cut.png" alt="Statue 2">
-        </div>
-      </div>
-      <!-- Screen 3 -->
-      <div class="panel">
-        <div class="layer layer--bees">
-          <img src="assets/bees.png" alt="Bees">
-        </div>
-      </div>
-      <!-- Screen 4 -->
-      <div class="panel">
-        <div class="layer layer--house">
-          <img src="assets/house.png" alt="House">
-        </div>
-      </div>
-
-    </div>
-  </section>
 
   <script src="script.js"></script>
 </body>
