@@ -1,3 +1,23 @@
+window.addEventListener("scroll", () => {
+  const panels = document.querySelectorAll(".scene-city1 .panel");
+
+  panels.forEach((panel) => {
+    const layers = panel.querySelectorAll(".layer");
+    const panelRect = panel.getBoundingClientRect();
+
+    layers.forEach((layer) => {
+      const speed = parseFloat(layer.dataset.speed || 0.3);
+      const translateY = -panelRect.top * speed;
+
+      
+      layer.style.transform = `translateY(${translateY}px)`;
+
+      
+    });
+  });
+});
+
+
 window.addEventListener("load", () => {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -31,12 +51,12 @@ window.addEventListener("load", () => {
 
   // CITY SCENE 2 (left to right) — 3 panels = move 2 screens = -200%
   gsap.to(".scroll-track.track-city2-desert-casino", {
-    xPercent: -900, //number of screens scrolled
+    xPercent: -800, //number of screens scrolled
     ease: "none",
     scrollTrigger: {
       trigger: ".scene-city2-desert-casino",
       start: "top top",
-      end: "+=9000",
+      end: "+=8000",
       scrub: true,
       pin: true
     }
