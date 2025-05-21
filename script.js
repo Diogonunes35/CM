@@ -5,14 +5,29 @@ window.addEventListener("load", () => {
   gsap.set(".scroll-track.track-farm", { xPercent: -50 }); // Shows the last panel first
   // FARM SCENE (right to left) — 2 panels = move 1 screen = -100%
   gsap.to(".scroll-track.track-farm", {
-    xPercent: 100, // Move to the right (positive)
+    xPercent: 50, // Move to the right (positive)
     ease: "none",
     scrollTrigger: {
       trigger: ".scene-farm",
       start: "top top",
-      end: "+=4000", // Adjusted for 1 screen of motion
+      end: "+=3000", // Adjusted for 1 screen of motion
       scrub: true,
       pin: true
+    }
+  });
+
+  // 2. Separate car drop animation (new)
+  // Car drop animation
+  gsap.to("#carro", {
+    top: "75vh", // Drops to 60% viewport height from top
+    opacity: 1,
+    duration: 4,
+    ease: "power4.out", // Strong deceleration effect
+    scrollTrigger: {
+      trigger: ".scene-farm",
+      start: "top 70%", // Triggers when farm section is near top
+      toggleActions: "play none none none",
+      markers: false // Remove when working
     }
   });
 
@@ -36,7 +51,7 @@ window.addEventListener("load", () => {
   // 2. Simplified parallax test
   gsap.utils.toArray(".scene-city1 .layer").forEach(layer => {
     const speed = parseFloat(layer.dataset.speed);
-    const img = layer.querySelector("img"); 
+    const img = layer.querySelector("img");
     gsap.to(img, {
       yPercent: -100 * speed, // Basic parallax movement
       ease: "none",
@@ -48,7 +63,7 @@ window.addEventListener("load", () => {
       }
     });
   });
-  
+
 
   // CITY SCENE 2 (left to right) — 3 panels = move 2 screens = -200%
   gsap.to(".scroll-track.track-city2-desert-casino", {
