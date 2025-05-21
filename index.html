@@ -67,61 +67,26 @@
       <div class="panel">
         <div class="layer layer-background-city1">
           <!-- static elements --> <!-- previously at the top of the page -->
-          <img src="assets/layer1.png" alt="Background">
+          <img id="background" src="assets/layer1.png" alt="Background">
           <!-- empty on the first screen (FOR NOW) -->
         </div>
-        <div class="layer layer2" data-speed="0.1">
-          <img src="assets/layer2.png">
+        <div class="layer layer--city1 layer2" data-speed="0.1">
+          <img id="predio-background-lento" src="assets/layer2.png">
         </div>
-        <div class="layer layer3" data-speed="0.5">
-          <img src="assets/layer3.png">
+        <div class="layer layer--city1 layer3" data-speed="0.5">
+          <img id="predio-background-medio" src="assets/layer3.png">
         </div>
-        <div class="layer layer5" data-speed="0.8">
-          <img src="assets/layer5.png">
+        <div class="layer layer--city1 layer5" data-speed="0.8">
+          <img id="predio-background-rapido" src="assets/layer5.png">
         </div>
-        <div class="layer layer4" data-speed="0.2">
+        <div class="layer layer--city1 layer4" data-speed="0.2">
           <img src="assets/layer4.png">
         </div>
-      </div>
-
-      <!-- Screen 2 -->
-      <div class="panel">
-        <div class="layer layer-background-city1">
-          <!-- static elements --> <!-- previously at the top of the page -->
-          <img src="assets/layer1.png" alt="Background">
-          <!-- empty on the first screen (FOR NOW) -->
-        </div>
-        <div class="layer layer2" data-speed="0.1">
-          <img src="assets/layer2.png">
-        </div>
-        <div class="layer layer3" data-speed="0.3">
-          <img src="assets/layer3.png">
-        </div>
-        <div class="layer layer5" data-speed="0.5">
-          <img src="assets/layer5.png">
-        </div>
-        <div class="layer layer6" data-speed="0">
-          <img src="assets/layer6.png">
+        <div class="layer layer--city1" data-speed="0">
+          <img id="predio" src="assets/layer6.png">
         </div>
       </div>
 
-      <!-- Screen 3 -->
-      <div class="panel">
-        <div class="layer layer-background-city1">
-          <!-- static elements --> <!-- previously at the top of the page -->
-          <img src="assets/layer1.png" alt="Background">
-          <!-- empty on the first screen (FOR NOW) -->
-        </div>
-        <div class="layer layer2" data-speed="0.1">
-          <img src="assets/layer2.png">
-        </div>
-        <div class="layer layer3" data-speed="0.3">
-          <img src="assets/layer3.png">
-        </div>
-        <div class="layer layer5" data-speed="0.5">
-          <img src="assets/layer5.png">
-        </div>
-      </div>
   </section>
 
   <!-- SCENE CITY2 + DESERT + CASINO -->
@@ -152,7 +117,6 @@
       <div class="panel transition overlay4">
         <h1>"TRANSITION"</h1>
         <div class="layer layer--transition">
-          <img src="assets/transition.png" alt="Transition">
         </div>
       </div> <!-- left to right -->
 
@@ -163,10 +127,10 @@
         <div class="panel">
           <div class="layer layer-background-desert">
             <!-- static elements --> <!-- previously at the top of the page -->
-            <img src="assets/background.png" alt="Background">
+            <img src="assets/background.png" alt="Background"">
             <!-- empty on the first screen (FOR NOW) -->
           </div>
-          <div class="layer layer--ground-desert">
+          <div class=" layer layer--ground-desert">
             <img src="assets/ground.png" alt="Ground">
           </div>
         </div>

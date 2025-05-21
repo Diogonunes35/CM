@@ -1,22 +1,3 @@
-window.addEventListener("scroll", () => {
-  const panels = document.querySelectorAll(".scene-city1 .panel");
-
-  panels.forEach((panel) => {
-    const layers = panel.querySelectorAll(".layer");
-    const panelRect = panel.getBoundingClientRect();
-
-    layers.forEach((layer) => {
-      const speed = parseFloat(layer.dataset.speed || 0.3);
-      const translateY = -panelRect.top * speed;
-
-      
-      layer.style.transform = `translateY(${translateY}px)`;
-
-      
-    });
-  });
-});
-
 
 window.addEventListener("load", () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -35,19 +16,39 @@ window.addEventListener("load", () => {
     }
   });
 
+  // ----- CITY 1 PARALLAX (updated) -----
+  const city1Track = document.querySelector(".scene-city1 .scroll-track");
+  gsap.set([".layer img"], { willChange: "transform" });
 
-  // CITY SCENE 1 (top to bottom) — 3 panels = move 2 screens = -200%
-  gsap.to(".scroll-track.track-city1", {
-    yPercent: -200,
+  gsap.to(".scene-city1 .scroll-track", {
+    yPercent: -66.66, // Matches 300vh container (2/3 of content)
     ease: "none",
     scrollTrigger: {
       trigger: ".scene-city1",
       start: "top top",
-      end: "+=3000", // ~1000 per panel
+      end: "+=3000", // 300vh
       scrub: true,
-      pin: true
+      pin: true,
+      markers: false // For debugging
     }
   });
+
+  // 2. Simplified parallax test
+  gsap.utils.toArray(".scene-city1 .layer").forEach(layer => {
+    const speed = parseFloat(layer.dataset.speed);
+    const img = layer.querySelector("img"); 
+    gsap.to(img, {
+      yPercent: -100 * speed, // Basic parallax movement
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".scene-city1",
+        start: "top top",
+        end: "+=3000",
+        scrub: true
+      }
+    });
+  });
+  
 
   // CITY SCENE 2 (left to right) — 3 panels = move 2 screens = -200%
   gsap.to(".scroll-track.track-city2-desert-casino", {
