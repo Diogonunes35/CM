@@ -19,7 +19,6 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  outline: 2px dashed limegreen;
 }
 
 .panel {
@@ -27,7 +26,6 @@ body {
   width: 100vw;
   height: 100vh;
   position: relative;
-  border: red 2px solid;
 }
 
 .scroll-track {
@@ -139,8 +137,7 @@ body {
   height: 300vh;
   width: 100vw;
   position: absolute;
-  background: limegreen;
-  outline: 2px solid green;
+
 }
 
 .scene-city1 .layer {
@@ -151,7 +148,6 @@ body {
   top: 0;
   left: 0;
   overflow: visible;
-  outline: 1px dashed cyan;
 }
 
 .scene-city1 .layer img {
@@ -311,7 +307,7 @@ body {
 }
 
 .css-typing p {
-  border-right: .15em solid orange;
+
   color:white;
   font-family: "Courier";
   font-size: 28px;
@@ -324,6 +320,7 @@ body {
   animation: type 2s steps(40, end);
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  color: red;
 }
 
 .css-typing p:nth-child(2) {
@@ -359,12 +356,23 @@ body {
   animation-fill-mode: forwards;
 }
 
+.css-typing p:nth-child(5) {
+  width: 60em;
+  opacity: 0;
+  -webkit-animation: type5 2s steps(40, end);
+  animation: type5 2s steps(40, end);
+  -webkit-animation-delay: 8s;
+  animation-delay: 8s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
 @keyframes type {
   0% {
     width: 0;
   }
   99.9% {
-    border-right: .15em solid orange;
+
   }
   100% {
     border: none;
@@ -376,7 +384,7 @@ body {
     width: 0;
   }
   99.9% {
-    border-right: .15em solid orange;
+
   }
   100% {
     border: none;
@@ -391,7 +399,7 @@ body {
     opacity: 1;
   }
   99.9% {
-    border-right: .15em solid orange;
+
   }
   100% {
     opacity: 1;
@@ -407,7 +415,7 @@ body {
     opacity: 1;
   }
   99.9% {
-    border-right: .15em solid orange;
+
   }
   100% {
     opacity: 1;
@@ -460,6 +468,46 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes type5 {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+    opacity: 1;
+    width: 60em;
+  }
+  100% {
+    opacity: 1;
+    width: 60em;
+    border: none;
+  }
+}
+
+@-webkit-keyframes type5 {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+    opacity: 1;
+    width: 60em;
+  }
+  100% {
+    opacity: 1;
+    width: 60em;
+    border: none;
   }
 }
 
