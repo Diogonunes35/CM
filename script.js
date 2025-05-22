@@ -19,7 +19,7 @@ window.addEventListener("load", () => {
   // 2. Separate car drop animation (new)
   // Car drop animation
   gsap.to("#carro", {
-    top: "80vh", // Drops to 60% viewport height from top
+    top: "85vh", // Drops to 60% viewport height from top
     opacity: 1,
     duration: 4,
     ease: "power4.out", // Strong deceleration effect
@@ -64,15 +64,14 @@ window.addEventListener("load", () => {
     });
   });
 
-
   // CITY SCENE 2 (left to right) — 3 panels = move 2 screens = -200%
   gsap.to(".scroll-track.track-city2-desert-casino", {
-    xPercent: -800, //number of screens scrolled
+    xPercent: -500, //number of screens scrolled
     ease: "none",
     scrollTrigger: {
       trigger: ".scene-city2-desert-casino",
       start: "top top",
-      end: "+=8000",
+      end: "+=5000",
       scrub: true,
       pin: true
     }
