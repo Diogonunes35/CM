@@ -1,6 +1,7 @@
 /* ===== GLOBAL & BASE STYLES ===== */
 html,
 body {
+  background-color: black;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -604,4 +605,34 @@ html, body {
 @keyframes bounce {
   0%, 100% { transform: translateY(0);}
   50% { transform: translateY(-10px);}
+}
+
+#start-overlay {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Courier", monospace;
+  font-size: 2.2rem;
+  transition: opacity 0.5s;
+}
+
+#start-overlay span {
+  animation: blink-fade 2.2s infinite;
+}
+
+@keyframes blink-fade {
+  0%   { opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+body.no-scroll {
+  overflow: hidden !important;
+  height: 100vh !important;
 }

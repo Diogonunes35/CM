@@ -152,3 +152,28 @@ window.addEventListener('DOMContentLoaded', function() {
     }, 50); // Pequeno delay para garantir o repaint antes do fade
   }, 10000); // 10 segundos
 });
+
+document.body.classList.add('no-scroll');
+const overlay = document.getElementById('start-overlay');
+const intro = document.querySelector('.intro');
+if (intro) intro.style.visibility = 'hidden';
+
+overlay.addEventListener('click', () => {
+  overlay.style.transition = 'opacity 0.5s';
+  overlay.style.opacity = '0';
+  // Só esconde após o fade, mantendo o fundo preto durante a transição
+  overlay.addEventListener('transitionend', function handler() {
+    overlay.style.display = 'none';
+    overlay.removeEventListener('transitionend', handler);
+    document.body.classList.remove('no-scroll');
+    if (intro) intro.style.visibility = 'visible';
+    // Reinicia animação das letras
+    document.querySelectorAll('.css-typing p').forEach(p => {
+      p.style.animation = 'none';
+      p.offsetHeight; // trigger reflow
+      p.style.animation = '';
+    });
+  });
+  const audio = document.getElementById('bg-audio');
+  if (audio) audio.play();
+});
