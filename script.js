@@ -76,64 +76,8 @@ window.addEventListener("load", () => {
     }
   });
 
-  // CENA 3 NAO UTILIZADO
-  /* gsap.set(".scroll-track.track-city3", { yPercent: -200 }); // Shows the last panel first
-  // CITY SCENE 3 (bottom to top) — 3 panels = move up 2 screens = +200%
-  gsap.to(".scroll-track.track-city3", {
-      yPercent: 200,
-      ease: "none",
-      scrollTrigger: {
-          trigger: ".scene-city3",
-          start: "top top",
-          end: "+=3000",
-          scrub: true,
-          pin: true
-      }
-  }); */
-
-  //// PARA APAGAR EM PRINCIPIO
-  /*  // DESERT SCENE (left to right) — 4 panels = move 3 screens = -300%
-   gsap.to(".scroll-track.track-desert", {
-     xPercent: -300,
-     ease: "none",
-     scrollTrigger: {
-       trigger: ".scene-desert",
-       start: "top top",
-       end: "+=4000",
-       scrub: true,
-       pin: true
-     }
-   }); */
-
-  // (OPTIONAL) CHARACTER animation — kept disabled
-  /*
-  gsap.to(".character", {
-      xPercent: 300,
-      scrollTrigger: {
-          trigger: ".scene-desert",
-          start: "top top",
-          end: "bottom bottom",
-          scrub: true
-      }
-  });
-  */
-
-  //// PARA APAGAR EM PRINCIPIO
-  /*   // CASINO SCENE — Placeholder (make sure it exists in HTML)
-    gsap.to(".scroll-track.track-casino", {
-      xPercent: -200,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".scene-casino",
-        start: "top top",
-        end: "+=3000",
-        scrub: true,
-        pin: true
-      }
-    });
-   */
-
 });
+
 
 window.addEventListener('scroll', function () {
   console.log('Scroll Y:', window.scrollY);
