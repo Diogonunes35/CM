@@ -19,7 +19,6 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  outline: 2px dashed limegreen;
 }
 
 .panel {
@@ -27,7 +26,6 @@ body {
   width: 100vw;
   height: 100vh;
   position: relative;
-  border: red 2px solid;
 }
 
 .scroll-track {
@@ -49,6 +47,25 @@ body {
 .scroll-track.vertical .panel {
   height: 100vh;
   width: 100vw;
+}
+
+/* ===== INTRO ===== */
+.intro {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.intro .panel {
+  display: flex;
+  align-items: center;
+  
+  height: 100vh;
+  width: 100vw;
+  border: none; /* Remove border if not needed */
+  background: transparent; /* Remove background if not needed */
 }
 
 /* ===== FARM SCENE ===== */
@@ -120,8 +137,7 @@ body {
   height: 300vh;
   width: 100vw;
   position: absolute;
-  background: limegreen;
-  outline: 2px solid green;
+
 }
 
 .scene-city1 .layer {
@@ -132,7 +148,6 @@ body {
   top: 0;
   left: 0;
   overflow: visible;
-  outline: 1px dashed cyan;
 }
 
 .scene-city1 .layer img {
@@ -288,4 +303,220 @@ body {
 .scroll-track.track-desert {
   width: 400vw;
   display: flex;
+}
+
+.css-typing p {
+
+  color:white;
+  font-family: "Courier";
+  font-size: 28px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.css-typing p:nth-child(1) {
+  width: 22em;
+  -webkit-animation: type 2s steps(40, end);
+  animation: type 2s steps(40, end);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  color: red;
+}
+
+.css-typing p:nth-child(2) {
+  width: 60em;
+  opacity: 0;
+  -webkit-animation: type2 2s steps(40, end);
+  animation: type2 2s steps(40, end);
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.css-typing p:nth-child(3) {
+  width: 60em;
+  opacity: 0;
+  -webkit-animation: type3 2s steps(40, end);
+  animation: type3 2s steps(40, end);
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.css-typing p:nth-child(4) {
+  width: 60em;
+  opacity: 0;
+  -webkit-animation: type4 2s steps(40, end);
+  animation: type3 2s steps(40, end);
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.css-typing p:nth-child(5) {
+  width: 60em;
+  opacity: 0;
+  -webkit-animation: type5 2s steps(40, end);
+  animation: type5 2s steps(40, end);
+  -webkit-animation-delay: 8s;
+  animation-delay: 8s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+
+  }
+  100% {
+    border: none;
+  }
+}
+
+@-webkit-keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+
+  }
+  100% {
+    border: none;
+  }
+}
+
+@keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@-webkit-keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@keyframes type3 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes type3 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes type4 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes type4 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes type5 {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+    opacity: 1;
+    width: 60em;
+  }
+  100% {
+    opacity: 1;
+    width: 60em;
+    border: none;
+  }
+}
+
+@-webkit-keyframes type5 {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+    opacity: 1;
+    width: 60em;
+  }
+  100% {
+    opacity: 1;
+    width: 60em;
+    border: none;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    border-color: tranparent;
+  }
 }
