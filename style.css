@@ -183,17 +183,17 @@
     height: 100vh;
   }
 
-  /* ===== CAR GLOW EFFECT ===== */
-  #car-glow-container {
-    position: absolute;
-    top: 20%; /* Match car initial position */
-    right: 10vw; /* Match car position */
-    width: 37vh; /* Slightly larger than car */
-    height: 12vh; /* Slightly larger than car */
-    z-index: 4; /* Above car */
-    pointer-events: auto !important;
-    cursor: pointer;
-  }
+/* ===== CAR GLOW EFFECT ===== */
+#car-glow-container {
+  position: absolute;
+  top: 20%; /* Match car initial position */
+  right: 10vw; /* Match car position */
+  width: 37vh; /* Slightly larger than car */
+  height: 12vh; /* Slightly larger than car */
+  z-index: 4; /* Above car */
+  pointer-events: auto !important;
+  cursor: pointer;
+}
 
   #car-glow-rect {
     position: absolute;
@@ -214,28 +214,28 @@
     transition: all 0.3s ease;
   }
 
-  #car-hover-text {
-    position: fixed !important;
-    top: 32px !important; /* Top-left corner of screen */
-    left: 32px !important; /* Top-left corner of screen */
-    color: #00ffff;
-    font-family: "Courier", monospace;
-    font-size: 18px;
-    font-weight: bold;
-    text-shadow: 0 0 15px #00ffff;
-    opacity: 0; /* Hidden by default */
-    visibility: hidden; /* Completely hidden on page load */
-    transition: all 1s ease; /* Slower fade transition */
-    pointer-events: none;
-    white-space: normal;
-    max-width: 300px; /* Limit width to allow wrapping */
-    z-index: 10000; /* Higher than start overlay */
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background for visibility */
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #00ffff;
-    transform: translateY(0); /* For smooth animations */
-  }
+#car-hover-text {
+  position: fixed !important;
+  top: 32px !important; /* Top-left corner of screen */
+  left: 32px !important; /* Top-left corner of screen */
+  color: #00ffff;
+  font-family: "Courier", monospace;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0 0 15px #00ffff;
+  opacity: 0; /* Hidden by default */
+  visibility: hidden; /* Completely hidden on page load */
+  transition: all 1s ease; /* Slower fade transition */
+  pointer-events: none;
+  white-space: normal;
+  max-width: 300px; /* Limit width to allow wrapping */
+  z-index: 10000; /* Higher than start overlay */
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent background for visibility */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #00ffff;
+  transform: translateY(0); /* For smooth animations */
+}
 
   /* Fade-out animation for text box */
   @keyframes fadeOut {
@@ -249,10 +249,10 @@
     }
   }
 
-  /* Add fade-out class for JavaScript control */
-  #car-hover-text.fade-out {
-    animation: fadeOut 1s ease forwards;
-  }
+/* Add fade-out class for JavaScript control */
+#car-hover-text.fade-out {
+  animation: fadeOut 1s ease forwards;
+}
 
   /* Neon flashing animation - slower with more time at 0% opacity */
   @keyframes neon-flash {
@@ -295,6 +295,137 @@
 
   /* Removed CSS hover for text - controlled by JavaScript */
 
+/* ===== CITY1 GLOW EFFECT ===== */
+#city1-glow-container {
+  position: absolute;
+  top: 163%; /* Lower on screen */
+  left: 50%; /* Horizontal center */
+  transform: translate(-50%, -50%); /* Center the rectangle */
+  width: 29vh; /* Same size as car glow - you can change height later */
+  height: 17vh; /* Same size as car glow - you can change height later */
+  z-index: 10; /* Above city elements */
+  pointer-events: auto !important;
+  cursor: pointer;
+}
+
+#city1-glow-rect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #00ffff; /* Neon cyan color */
+  background: transparent;
+  border-radius: 8px;
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 30px #00ffff,
+    inset 0 0 10px rgba(0, 255, 255, 0.1);
+  animation: neon-flash 2s ease-in-out infinite;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#city1-hover-text {
+  position: fixed !important;
+  top: 32px !important; /* Top-left corner of screen */
+  left: 32px !important; /* Top-left corner of screen */
+  color: #00ffff;
+  font-family: "Courier", monospace;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0 0 15px #00ffff;
+  opacity: 0; /* Hidden by default */
+  visibility: hidden; /* Completely hidden on page load */
+  transition: all 1s ease; /* Slower fade transition */
+  pointer-events: none;
+  white-space: normal;
+  max-width: 300px; /* Wider horizontal space for text */
+  z-index: 10000; /* Higher than start overlay */
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent background for visibility */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #00ffff;
+  transform: translateY(0); /* For smooth animations */
+}
+
+/* Hover states for city1 glow */
+#city1-glow-container:hover #city1-glow-rect {
+  animation: none; /* Stop flashing */
+  opacity: 1;
+  box-shadow:
+    0 0 15px #00ffff,
+    0 0 25px #00ffff,
+    0 0 35px #00ffff,
+    inset 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+/* ===== FARMHOUSE GLOW EFFECT ===== */
+#farmhouse-glow-container {
+  position: absolute;
+  top: 45%; /* Position around farmhouse area */
+  left: 9%; /* Left side where farmhouse is located */
+  transform: translate(-50%, -50%); /* Center the rectangle */
+  width: 20vh; /* Slightly larger for farmhouse */
+  height: 15vh; /* Slightly larger for farmhouse */
+  z-index: 4; /* Above farm elements */
+  pointer-events: auto !important;
+  cursor: pointer;
+}
+
+#farmhouse-glow-rect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #00ffff; /* Neon cyan color */
+  background: transparent;
+  border-radius: 8px;
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 30px #00ffff,
+    inset 0 0 10px rgba(0, 255, 255, 0.1);
+  animation: neon-flash 2s ease-in-out infinite;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#farmhouse-hover-text {
+  position: fixed !important;
+  top: 32px !important; /* Top-left corner of screen */
+  left: 32px !important; /* Top-left corner of screen */
+  color: #00ffff;
+  font-family: "Courier", monospace;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0 0 15px #00ffff;
+  opacity: 0; /* Hidden by default */
+  visibility: hidden; /* Completely hidden on page load */
+  transition: all 1s ease; /* Slower fade transition */
+  pointer-events: none;
+  white-space: normal;
+  max-width: 500px; /* Wider horizontal space for text */
+  z-index: 10000; /* Higher than start overlay */
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent background for visibility */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #00ffff;
+  transform: translateY(0); /* For smooth animations */
+}
+
+/* Hover states for farmhouse glow */
+#farmhouse-glow-container:hover #farmhouse-glow-rect {
+  animation: none; /* Stop flashing */
+  opacity: 1;
+  box-shadow:
+    0 0 15px #00ffff,
+    0 0 25px #00ffff,
+    0 0 35px #00ffff,
+    inset 0 0 15px rgba(0, 255, 255, 0.2);
+}
 
   /* ===== CITY 1 SCENE ===== */
   .scene-city1 {

@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="UTF-8">
-  <title>Blade Runner Parallax</title>
+  <title>Blade Runner 2049</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
   <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
@@ -81,6 +81,11 @@
       <div class="panel">
         <div class="layer layer--farmhouse">
           <img src="assets/farmhouse.jpg" alt="Farmhouse">
+
+          <!-- Interactive glow rectangle around farmhouse -->
+          <div id="farmhouse-glow-container">
+            <div id="farmhouse-glow-rect"></div>
+          </div>
         </div>
       </div>
 
@@ -116,6 +121,11 @@
         </div>
         <div class="layer layer--city1" data-speed="0">
           <img id="predio" src="assets/layer6.png">
+        </div>
+
+        <!-- Interactive glow rectangle for city1 scene -->
+        <div id="city1-glow-container">
+          <div id="city1-glow-rect"></div>
         </div>
       </div>
 
@@ -200,26 +210,8 @@
   </section>
 
 
-  <!-- TRANSITION -->
-  <div class="panel transition overlay3">
-    <img src="assets/trans-farmhouse-city.webp">
-  </div> <!-- right to left -->
-
-  <div class="outro">
-    <div class="panel">
-      <div class="css-typing">
-        <p>
-          Blade Runner 2049
-        </p>
-
-        <p>Trabalho Realizado por Diogo Nunes e António Simões no ambito da cadeira
-          </br>
-          de Comunicação Multimédia para a o curso de Design Multimédia da Univesidade de Coimbra.
-        </p>
-      </div>
-    </div>
-  </div>
-
+  <!-- Hover text positioned fixed to viewport -->
+  <div id="car-hover-text">A tarefa de K envolve a procura e a extreminação de replicantes ilegais, o que o levou à zona rural da Califórnia, muito para além dos limites da cidade de Los Angeles, onde o replicante Sapper Morton vivia como um recluso agricultor de proteínas.</div>
 
       <audio id="bg-audio" src="assets/sound/background.mp3" loop autoplay></audio>
       <audio id="city-audio" src="assets/sound/city-background.mp3" loop></audio>
