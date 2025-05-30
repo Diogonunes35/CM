@@ -293,9 +293,7 @@ body {
     inset 0 0 15px rgba(0, 255, 255, 0.2);
 }
 
-#car-glow-container:hover #car-hover-text {
-  opacity: 1;
-}
+/* Removed CSS hover for text - controlled by JavaScript */
 
 
 /* ===== CITY 1 SCENE ===== */

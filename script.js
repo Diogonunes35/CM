@@ -179,6 +179,56 @@ window.addEventListener("load", () => {
     });
    */
 
+  // Car hover event listeners for text display
+  const carGlowContainer = document.getElementById('car-glow-container');
+  const carHoverText = document.getElementById('car-hover-text');
+
+  console.log('Looking for car glow elements...');
+
+  if (carGlowContainer && carHoverText) {
+    console.log('Car glow elements found!', {
+      container: carGlowContainer,
+      text: carHoverText
+    });
+
+    // Multiple event types for better compatibility
+    const showText = () => {
+      console.log('Showing text');
+      carHoverText.classList.remove('fade-out');
+      carHoverText.style.setProperty('opacity', '1', 'important');
+      carHoverText.style.setProperty('visibility', 'visible', 'important');
+      carHoverText.style.transform = 'translateY(0)';
+    };
+
+    const hideText = () => {
+      console.log('Hiding text');
+      carHoverText.classList.add('fade-out');
+      // Let the CSS animation handle the fade-out
+      setTimeout(() => {
+        carHoverText.style.visibility = 'hidden';
+      }, 1000); // Match the animation duration
+    };
+
+    // Mouse events
+    carGlowContainer.addEventListener('mouseenter', showText);
+    carGlowContainer.addEventListener('mouseleave', hideText);
+    carGlowContainer.addEventListener('mouseover', showText);
+    carGlowContainer.addEventListener('mouseout', hideText);
+
+    // Touch events for mobile
+    carGlowContainer.addEventListener('touchstart', showText);
+    carGlowContainer.addEventListener('touchend', hideText);
+
+    // Initial state
+    hideText();
+
+  } else {
+    console.log('Car glow elements NOT found!', {
+      container: carGlowContainer,
+      text: carHoverText
+    });
+  }
+
 });
 
 window.addEventListener('scroll', function () {
