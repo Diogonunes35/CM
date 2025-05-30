@@ -30,6 +30,19 @@ window.addEventListener("load", () => {
     }
   });
 
+  // Car glow container animation - follows the car
+  gsap.to("#car-glow-container", {
+    top: "80vh", // Same as car animation
+    duration: 4,
+    ease: "power4.out", // Same easing as car
+    scrollTrigger: {
+      trigger: ".scene-farm",
+      start: "top 70%", // Same trigger as car
+      toggleActions: "play none none none",
+      markers: false
+    }
+  });
+
   // ----- CITY 1 PARALLAX (updated) -----
   const city1Track = document.querySelector(".scene-city1 .scroll-track");
   gsap.set([".layer img"], { willChange: "transform" });
@@ -109,8 +122,64 @@ window.addEventListener("load", () => {
     }
   });
 
-});
+  // CENA 3 NAO UTILIZADO
+  /* gsap.set(".scroll-track.track-city3", { yPercent: -200 }); // Shows the last panel first
+  // CITY SCENE 3 (bottom to top) — 3 panels = move up 2 screens = +200%
+  gsap.to(".scroll-track.track-city3", {
+      yPercent: 200,
+      ease: "none",
+      scrollTrigger: {
+          trigger: ".scene-city3",
+          start: "top top",
+          end: "+=3000",
+          scrub: true,
+          pin: true
+      }
+  }); */
 
+  //// PARA APAGAR EM PRINCIPIO
+  /*  // DESERT SCENE (left to right) — 4 panels = move 3 screens = -300%
+   gsap.to(".scroll-track.track-desert", {
+     xPercent: -300,
+     ease: "none",
+     scrollTrigger: {
+       trigger: ".scene-desert",
+       start: "top top",
+       end: "+=4000",
+       scrub: true,
+       pin: true
+     }
+   }); */
+
+  // (OPTIONAL) CHARACTER animation — kept disabled
+  /*
+  gsap.to(".character", {
+      xPercent: 300,
+      scrollTrigger: {
+          trigger: ".scene-desert",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true
+      }
+  });
+  */
+
+  //// PARA APAGAR EM PRINCIPIO
+  /*   // CASINO SCENE — Placeholder (make sure it exists in HTML)
+    gsap.to(".scroll-track.track-casino", {
+      xPercent: -200,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".scene-casino",
+        start: "top top",
+        end: "+=3000",
+        scrub: true,
+        pin: true
+      }
+    });
+   */
+
+});
 
 window.addEventListener('scroll', function () {
   console.log('Scroll Y:', window.scrollY);
