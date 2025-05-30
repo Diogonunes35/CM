@@ -340,7 +340,7 @@ window.addEventListener('scroll', function () {
 
 document.body.classList.add('no-scroll');
 const overlay = document.getElementById('start-overlay');
-const intro = document.querySelector('.intro');
+const intro = document.querySelector('.intro-centered');
 if (intro) intro.style.visibility = 'hidden';
 
 overlay.addEventListener('click', () => {
