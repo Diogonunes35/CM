@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
 
   // 2. Separate car drop animation (new)
   // Car drop animation
-  gsap.to("#carro", {
+  gsap.to("#carro1", {
     top: "85vh", // Drops to 60% viewport height from top
     opacity: 1,
     duration: 4,

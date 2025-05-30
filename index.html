@@ -63,7 +63,7 @@
         <div class="layer layer--farm">
           <img src="assets/ceu.png" alt="Ceu">
           <img id="background" src="assets/farmhouse.webp" alt="Background">
-          <img id="carro" src="assets/carro.png" alt="Carro">
+          <img id="carro1" src="assets/carro.png" alt="Carro">
 
           <!-- Interactive glow rectangle around car -->
           <div id="car-glow-container">
@@ -94,6 +94,7 @@
   <!-- CITY -->
   <section class="scene scene-city1">
     <div class="scroll-track vertical track-city1"> <!-- top to bottom -->
+
       <!-- Screen 1 -->
       <div class="panel">
         <div class="layer layer-background-city1">
@@ -123,6 +124,7 @@
   <!-- SCENE CITY2 + DESERT + CASINO -->
   <section class="scene scene-city2-desert-casino">
     <div class="scroll-track horizontal track-city2-desert-casino"> <!-- left to right -->
+
 
       <div class="scene-city2" style="display: contents;">
         <!-- Screen 1 -->
@@ -198,12 +200,30 @@
   </section>
 
 
-  <!-- Hover text positioned fixed to viewport -->
-  <div id="car-hover-text">A tarefa de K envolve a procura e a extreminação de replicantes ilegais, o que o levou à zona rural da Califórnia, muito para além dos limites da cidade de Los Angeles, onde o replicante Sapper Morton vivia como um recluso agricultor de proteínas.</div>
+  <!-- TRANSITION -->
+  <div class="panel transition overlay3">
+    <img src="assets/trans-farmhouse-city.webp">
+  </div> <!-- right to left -->
 
-  <audio id="bg-audio" src="assets/sound/background.mp3" loop autoplay></audio>
-  <audio id="city-audio" src="assets/sound/city-background.mp3" loop></audio>
-  <script src="script.js"></script>
+  <div class="outro">
+    <div class="panel">
+      <div class="css-typing">
+        <p>
+          Blade Runner 2049
+        </p>
+
+        <p>Trabalho Realizado por Diogo Nunes e António Simões no ambito da cadeira
+          </br>
+          de Comunicação Multimédia para a o curso de Design Multimédia da Univesidade de Coimbra.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+      <audio id="bg-audio" src="assets/sound/background.mp3" loop autoplay></audio>
+      <audio id="city-audio" src="assets/sound/city-background.mp3" loop></audio>
+      <script src="script.js"></script>
 </body>
 
 </html>
