@@ -1,4 +1,3 @@
-
 window.addEventListener("load", () => {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -142,4 +141,14 @@ window.addEventListener('scroll', function () {
 
   // Or using document.documentElement.scrollTop
   //  console.log('Scroll Y (alt):', document.documentElement.scrollTop);
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+  setTimeout(function() {
+    const arrow = document.getElementById('arrow-next');
+    arrow.style.display = 'flex'; // Garante que está visível para o fade
+    setTimeout(() => {
+      arrow.classList.add('visible');
+    }, 50); // Pequeno delay para garantir o repaint antes do fade
+  }, 10000); // 10 segundos
 });
