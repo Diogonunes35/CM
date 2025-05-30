@@ -43,7 +43,22 @@ window.addEventListener("load", () => {
       end: "+=3000", // 300vh
       scrub: true,
       pin: true,
-      markers: false // For debugging
+      markers: false, // For debugging
+      onEnter: () => {
+        // Play city background audio when entering city1 scene
+        const cityAudio = document.getElementById('city-audio');
+        if (cityAudio) {
+          cityAudio.currentTime = 0;
+          cityAudio.play().catch(e => console.log('City audio play failed:', e));
+        }
+      },
+      onEnterBack: () => {
+        // Resume city background audio when coming back to city1 scene
+        const cityAudio = document.getElementById('city-audio');
+        if (cityAudio) {
+          cityAudio.play().catch(e => console.log('City audio play failed:', e));
+        }
+      }
     }
   });
 
@@ -72,7 +87,25 @@ window.addEventListener("load", () => {
       start: "top top",
       end: "+=5000",
       scrub: true,
-      pin: true
+      pin: true,
+      onUpdate: (self) => {
+        // Calculate progress through the horizontal scroll
+        const progress = self.progress;
+        const cityAudio = document.getElementById('city-audio');
+
+        // Stop city audio when we reach the transition (around 37.5% progress)
+        // City2 has 3 screens + 1 transition = 4 panels total
+        // Transition starts at panel 4 out of 9 total panels = ~44% progress
+        if (progress >= 0.44 && cityAudio && !cityAudio.paused) {
+          cityAudio.pause();
+          console.log('City audio stopped at transition, progress:', progress);
+        }
+        // Resume city audio when going back to city area
+        else if (progress < 0.44 && cityAudio && cityAudio.paused) {
+          cityAudio.play().catch(e => console.log('City audio play failed:', e));
+          console.log('City audio resumed, progress:', progress);
+        }
+      }
     }
   });
 
