@@ -229,6 +229,56 @@ window.addEventListener("load", () => {
     });
   }
 
+  // City1 hover event listeners for text display
+  const city1GlowContainer = document.getElementById('city1-glow-container');
+  const city1HoverText = document.getElementById('city1-hover-text');
+
+  console.log('Looking for city1 glow elements...');
+
+  if (city1GlowContainer && city1HoverText) {
+    console.log('City1 glow elements found!', {
+      container: city1GlowContainer,
+      text: city1HoverText
+    });
+
+    // Multiple event types for better compatibility
+    const showCity1Text = () => {
+      console.log('Showing city1 text');
+      city1HoverText.classList.remove('fade-out');
+      city1HoverText.style.setProperty('opacity', '1', 'important');
+      city1HoverText.style.setProperty('visibility', 'visible', 'important');
+      city1HoverText.style.transform = 'translateY(0)';
+    };
+
+    const hideCity1Text = () => {
+      console.log('Hiding city1 text');
+      city1HoverText.classList.add('fade-out');
+      // Let the CSS animation handle the fade-out
+      setTimeout(() => {
+        city1HoverText.style.visibility = 'hidden';
+      }, 1000); // Match the animation duration
+    };
+
+    // Mouse events
+    city1GlowContainer.addEventListener('mouseenter', showCity1Text);
+    city1GlowContainer.addEventListener('mouseleave', hideCity1Text);
+    city1GlowContainer.addEventListener('mouseover', showCity1Text);
+    city1GlowContainer.addEventListener('mouseout', hideCity1Text);
+
+    // Touch events for mobile
+    city1GlowContainer.addEventListener('touchstart', showCity1Text);
+    city1GlowContainer.addEventListener('touchend', hideCity1Text);
+
+    // Initial state
+    hideCity1Text();
+
+  } else {
+    console.log('City1 glow elements NOT found!', {
+      container: city1GlowContainer,
+      text: city1HoverText
+    });
+  }
+
 });
 
 window.addEventListener('scroll', function () {
