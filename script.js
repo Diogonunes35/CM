@@ -142,12 +142,46 @@ window.addEventListener('scroll', function () {
   //  console.log('Scroll Y (alt):', document.documentElement.scrollTop);
 });
 
-window.addEventListener('DOMContentLoaded', function() {
-  setTimeout(function() {
-    const arrow = document.getElementById('arrow-next');
-    arrow.style.display = 'flex'; // Garante que está visível para o fade
-    setTimeout(() => {
-      arrow.classList.add('visible');
-    }, 50); // Pequeno delay para garantir o repaint antes do fade
-  }, 10000); // 10 segundos
+document.body.classList.add('no-scroll');
+const overlay = document.getElementById('start-overlay');
+const intro = document.querySelector('.intro');
+if (intro) intro.style.visibility = 'hidden';
+
+overlay.addEventListener('click', () => {
+  overlay.style.transition = 'opacity 0.5s';
+  overlay.style.opacity = '0';
+  overlay.addEventListener('transitionend', function handler() {
+    overlay.style.display = 'none';
+    overlay.removeEventListener('transitionend', handler);
+    document.body.classList.remove('no-scroll');
+    if (intro) intro.style.visibility = 'visible';
+
+    // Reinicia animação das letras com delays maiores entre os parágrafos
+    const paragraphs = document.querySelectorAll('.css-typing p');
+    let delay = 0;
+    const animationDuration = 2500; // duração da animação de cada parágrafo (em ms)
+
+    paragraphs.forEach((p, i) => {
+      p.style.animation = 'none';
+      p.style.visibility = 'hidden';
+      p.offsetHeight; // trigger reflow
+      setTimeout(() => {
+        p.style.animation = '';
+        p.style.visibility = 'visible';
+      }, delay);
+      delay += animationDuration;
+    });
+
+    // Inicia o timer da seta só após 25 segundos
+    setTimeout(function() {
+      const arrow = document.getElementById('arrow-next');
+      arrow.style.display = 'flex';
+      setTimeout(() => {
+        arrow.classList.add('visible');
+      }, 50);
+    }, 23000); // seta aparece após 25 segundos
+
+  });
+  const audio = document.getElementById('bg-audio');
+  if (audio) audio.play();
 });

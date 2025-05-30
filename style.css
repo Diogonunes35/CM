@@ -1,6 +1,7 @@
 /* ===== GLOBAL & BASE STYLES ===== */
 html,
 body {
+  background-color: black;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -353,14 +354,14 @@ html, body {
 
   color:white;
   font-family: "Courier";
-  font-size: 28px;
+  font-size: 26px;
   white-space: nowrap;
   overflow: hidden;
 }
 .css-typing p:nth-child(1) {
   width: 22em;
-  -webkit-animation: type 2s steps(40, end);
-  animation: type 2s steps(40, end);
+  -webkit-animation: type 2.5s steps(40, end);
+  animation: type 2.5s steps(40, end);
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   color: red;
@@ -369,10 +370,10 @@ html, body {
 .css-typing p:nth-child(2) {
   width: 60em;
   opacity: 0;
-  -webkit-animation: type2 2s steps(40, end);
-  animation: type2 2s steps(40, end);
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
+  -webkit-animation: type2 2.5s steps(40, end);
+  animation: type2 2.5s steps(40, end);
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -380,10 +381,10 @@ html, body {
 .css-typing p:nth-child(3) {
   width: 60em;
   opacity: 0;
-  -webkit-animation: type3 2s steps(40, end);
-  animation: type3 2s steps(40, end);
-  -webkit-animation-delay: 4s;
-  animation-delay: 4s;
+  -webkit-animation: type3 2.5s steps(40, end);
+  animation: type3 2.5s steps(40, end);
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -391,10 +392,10 @@ html, body {
 .css-typing p:nth-child(4) {
   width: 60em;
   opacity: 0;
-  -webkit-animation: type4 2s steps(40, end);
-  animation: type3 2s steps(40, end);
-  -webkit-animation-delay: 6s;
-  animation-delay: 6s;
+  -webkit-animation: type4 2.5s steps(40, end);
+  animation: type4 2.5s steps(40, end);
+  -webkit-animation-delay: 7.5s;
+  animation-delay: 7.5s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -402,10 +403,10 @@ html, body {
 .css-typing p:nth-child(5) {
   width: 60em;
   opacity: 0;
-  -webkit-animation: type5 2s steps(40, end);
-  animation: type5 2s steps(40, end);
-  -webkit-animation-delay: 8s;
-  animation-delay: 8s;
+  -webkit-animation: type5 2.5s steps(40, end);
+  animation: type5 2.5s steps(40, end);
+  -webkit-animation-delay: 10s;
+  animation-delay: 10s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -523,7 +524,6 @@ html, body {
     opacity: 1;
   }
   99.9% {
-    border-right: .15em solid orange;
     opacity: 1;
     width: 60em;
   }
@@ -543,7 +543,6 @@ html, body {
     opacity: 1;
   }
   99.9% {
-    border-right: .15em solid orange;
     opacity: 1;
     width: 60em;
   }
@@ -605,4 +604,34 @@ html, body {
 @keyframes bounce {
   0%, 100% { transform: translateY(0);}
   50% { transform: translateY(-10px);}
+}
+
+#start-overlay {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Courier", monospace;
+  font-size: 2.2rem;
+  transition: opacity 0.5s;
+}
+
+#start-overlay span {
+  animation: blink-fade 2.2s infinite;
+}
+
+@keyframes blink-fade {
+  0%   { opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+body.no-scroll {
+  overflow: hidden !important;
+  height: 100vh !important;
 }
