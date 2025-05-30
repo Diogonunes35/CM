@@ -329,6 +329,20 @@ window.addEventListener("load", () => {
     });
   }
 
+  // Outro fade-in trigger when user reaches the outro panel
+  ScrollTrigger.create({
+    trigger: ".outro",
+    start: "top center",
+    onEnter: () => {
+      console.log('Outro panel reached - starting fade-in');
+      const outroElement = document.querySelector('.css-outro');
+      if (outroElement) {
+        outroElement.classList.add('fade-in');
+      }
+    },
+    markers: false
+  });
+
 });
 
 window.addEventListener('scroll', function () {

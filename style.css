@@ -939,3 +939,49 @@
     overflow: hidden !important;
     height: 100vh !important;
   }
+
+  /* ===== OUTRO SECTION ===== */
+  .outro {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  .outro .panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    border: none;
+    background: transparent;
+  }
+
+  .css-outro {
+    text-align: center;
+    max-width: 80vw;
+    opacity: 0; /* Hidden by default until triggered */
+    transition: opacity 2s ease-in-out; /* Smooth fade-in */
+  }
+
+  .css-outro p {
+    color: white;
+    font-family: "Courier";
+    font-size: 26px;
+    margin: 20px 0; /* Add spacing between paragraphs */
+  }
+
+  .css-outro p:nth-child(1) {
+    color: red;
+    font-size: 32px; /* Slightly larger for title */
+    margin-bottom: 30px;
+  }
+
+  /* Fade-in animation when triggered */
+  .css-outro.fade-in {
+    opacity: 1;
+  }
