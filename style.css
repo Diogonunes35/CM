@@ -5,7 +5,27 @@ body {
   padding: 0;
   height: 100%;
   scroll-behavior: smooth;
-  z-index: -1;
+}
+
+/* Esconde barras de scroll em todos os browsers */
+body, html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE e Edge */
+}
+body::-webkit-scrollbar, html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari e Opera */
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+  pointer-events: none;
+}
+
+/* Impede interação manual com o scroll horizontal */
+html, body {
+  pointer-events: none;
+}
+.scene, .panel, .scroll-track, * {
+  pointer-events: auto;
 }
 
 .transition img {
@@ -56,6 +76,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  padding-left: 40px;
 }
 
 .intro .panel {
@@ -520,4 +541,8 @@ body {
   50% {
     border-color: tranparent;
   }
+}
+
+.layer--city1.layer4 img {
+  object-fit: contain;
 }
