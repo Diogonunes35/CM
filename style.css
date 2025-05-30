@@ -361,8 +361,8 @@ html, body {
 }
 .css-typing p:nth-child(1) {
   width: 22em;
-  -webkit-animation: type 2s steps(40, end);
-  animation: type 2s steps(40, end);
+  -webkit-animation: type 2.5s steps(40, end);
+  animation: type 2.5s steps(40, end);
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   color: red;
@@ -371,10 +371,10 @@ html, body {
 .css-typing p:nth-child(2) {
   width: 60em;
   opacity: 0;
-  -webkit-animation: type2 2s steps(40, end);
-  animation: type2 2s steps(40, end);
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
+  -webkit-animation: type2 2.5s steps(40, end);
+  animation: type2 2.5s steps(40, end);
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -382,10 +382,10 @@ html, body {
 .css-typing p:nth-child(3) {
   width: 60em;
   opacity: 0;
-  -webkit-animation: type3 2s steps(40, end);
-  animation: type3 2s steps(40, end);
-  -webkit-animation-delay: 4s;
-  animation-delay: 4s;
+  -webkit-animation: type3 2.5s steps(40, end);
+  animation: type3 2.5s steps(40, end);
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -393,10 +393,10 @@ html, body {
 .css-typing p:nth-child(4) {
   width: 60em;
   opacity: 0;
-  -webkit-animation: type4 2s steps(40, end);
-  animation: type3 2s steps(40, end);
-  -webkit-animation-delay: 6s;
-  animation-delay: 6s;
+  -webkit-animation: type4 2.5s steps(40, end);
+  animation: type4 2.5s steps(40, end);
+  -webkit-animation-delay: 7.5s;
+  animation-delay: 7.5s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
@@ -404,10 +404,10 @@ html, body {
 .css-typing p:nth-child(5) {
   width: 60em;
   opacity: 0;
-  -webkit-animation: type5 2s steps(40, end);
-  animation: type5 2s steps(40, end);
-  -webkit-animation-delay: 8s;
-  animation-delay: 8s;
+  -webkit-animation: type5 2.5s steps(40, end);
+  animation: type5 2.5s steps(40, end);
+  -webkit-animation-delay: 10s;
+  animation-delay: 10s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
