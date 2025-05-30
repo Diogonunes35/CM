@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
   // 2. Separate car drop animation (new)
   // Car drop animation
   gsap.to("#carro", {
-    top: "80vh", // Drops to 60% viewport height from top
+    top: "85vh", // Drops to 60% viewport height from top
     opacity: 1,
     duration: 4,
     ease: "power4.out", // Strong deceleration effect
@@ -91,15 +91,14 @@ window.addEventListener("load", () => {
     });
   });
 
-
   // CITY SCENE 2 (left to right) — 3 panels = move 2 screens = -200%
   gsap.to(".scroll-track.track-city2-desert-casino", {
-    xPercent: -800, //number of screens scrolled
+    xPercent: -500, //number of screens scrolled
     ease: "none",
     scrollTrigger: {
       trigger: ".scene-city2-desert-casino",
       start: "top top",
-      end: "+=8000",
+      end: "+=5000",
       scrub: true,
       pin: true,
       onUpdate: (self) => {
@@ -179,56 +178,6 @@ window.addEventListener("load", () => {
       }
     });
    */
-
-  // Debug: Add hover event listeners for car glow container
-  const carGlowContainer = document.getElementById('car-glow-container');
-  const carHoverText = document.getElementById('car-hover-text');
-
-  console.log('Looking for car glow elements...');
-
-  if (carGlowContainer && carHoverText) {
-    console.log('Car glow elements found!', {
-      container: carGlowContainer,
-      text: carHoverText
-    });
-
-    // Multiple event types for better compatibility
-    const showText = () => {
-      console.log('Showing text');
-      carHoverText.classList.remove('fade-out');
-      carHoverText.style.setProperty('opacity', '1', 'important');
-      carHoverText.style.setProperty('visibility', 'visible', 'important');
-      carHoverText.style.transform = 'translateY(0)';
-    };
-
-    const hideText = () => {
-      console.log('Hiding text');
-      carHoverText.classList.add('fade-out');
-      // Let the CSS animation handle the fade-out
-      setTimeout(() => {
-        carHoverText.style.visibility = 'hidden';
-      }, 1000); // Match the animation duration
-    };
-
-    // Mouse events
-    carGlowContainer.addEventListener('mouseenter', showText);
-    carGlowContainer.addEventListener('mouseleave', hideText);
-    carGlowContainer.addEventListener('mouseover', showText);
-    carGlowContainer.addEventListener('mouseout', hideText);
-
-    // Touch events for mobile
-    carGlowContainer.addEventListener('touchstart', showText);
-    carGlowContainer.addEventListener('touchend', hideText);
-
-    // Initial state
-    hideText();
-
-  } else {
-    console.log('Car glow elements NOT found!', {
-      container: carGlowContainer,
-      text: carHoverText
-    });
-  }
 
 });
 
