@@ -279,6 +279,56 @@ window.addEventListener("load", () => {
     });
   }
 
+  // Farmhouse hover event listeners for text display
+  const farmhouseGlowContainer = document.getElementById('farmhouse-glow-container');
+  const farmhouseHoverText = document.getElementById('farmhouse-hover-text');
+
+  console.log('Looking for farmhouse glow elements...');
+
+  if (farmhouseGlowContainer && farmhouseHoverText) {
+    console.log('Farmhouse glow elements found!', {
+      container: farmhouseGlowContainer,
+      text: farmhouseHoverText
+    });
+
+    // Multiple event types for better compatibility
+    const showFarmhouseText = () => {
+      console.log('Showing farmhouse text');
+      farmhouseHoverText.classList.remove('fade-out');
+      farmhouseHoverText.style.setProperty('opacity', '1', 'important');
+      farmhouseHoverText.style.setProperty('visibility', 'visible', 'important');
+      farmhouseHoverText.style.transform = 'translateY(0)';
+    };
+
+    const hideFarmhouseText = () => {
+      console.log('Hiding farmhouse text');
+      farmhouseHoverText.classList.add('fade-out');
+      // Let the CSS animation handle the fade-out
+      setTimeout(() => {
+        farmhouseHoverText.style.visibility = 'hidden';
+      }, 1000); // Match the animation duration
+    };
+
+    // Mouse events
+    farmhouseGlowContainer.addEventListener('mouseenter', showFarmhouseText);
+    farmhouseGlowContainer.addEventListener('mouseleave', hideFarmhouseText);
+    farmhouseGlowContainer.addEventListener('mouseover', showFarmhouseText);
+    farmhouseGlowContainer.addEventListener('mouseout', hideFarmhouseText);
+
+    // Touch events for mobile
+    farmhouseGlowContainer.addEventListener('touchstart', showFarmhouseText);
+    farmhouseGlowContainer.addEventListener('touchend', hideFarmhouseText);
+
+    // Initial state
+    hideFarmhouseText();
+
+  } else {
+    console.log('Farmhouse glow elements NOT found!', {
+      container: farmhouseGlowContainer,
+      text: farmhouseHoverText
+    });
+  }
+
 });
 
 window.addEventListener('scroll', function () {
